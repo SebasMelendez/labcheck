@@ -1,0 +1,252 @@
+/*master styling*/
+
+body{
+    margin: 0px;
+    
+}
+
+/* .container{
+    display: grid;
+    grid-template-columns: 1fr;
+} */
+
+
+/*Nav Bar styling*/
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.left-side{
+    display: flex;
+
+}
+.nav-wrapper > .left-side > div {
+margin-right: 20px;
+font-size: 0.9em;
+text-transform: uppercase;
+
+}
+
+.nav-link-wrapper{
+    height: 22px;
+    border-bottom: 1px solid transparent ;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: gray;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+border-bottom: 1px solid red;
+}
+
+.nav-link-wrapper a:hover{
+    color: black;
+}
+
+.brand{
+    color: rgb(152, 10, 10);
+    font-weight: bold;
+    font-size: 30px;
+    font-style: oblique;
+}
+
+.lab-title{
+    align-items: center;
+    text-align: center;
+    
+}
+
+/*input styling - Log in page*/
+
+
+.input-wrapper{
+    position: absolute;
+    left: 500px;
+    top: 150px;
+    padding: 25px;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    align-items: center;
+    height: 400px;
+    margin-top: 500px;
+    
+}
+.background-pic{
+position: relative;
+border: 2px solid gray;
+padding-left: 5px;
+padding-right: 5px;
+overflow: scroll;
+
+}
+
+ 
+
+.input{
+   font-weight: bold;
+   justify-content: space-between;
+   flex-direction: column;
+   height: 300px;
+   background-color:lightgrey;
+   padding: 50px;
+
+  
+}
+
+.inpt{
+    border-color:transparent;
+    transition: 1s;
+    position: relative;
+}
+
+.inpt:hover{
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.submit-btn{
+border-width: 5px;
+font-size: 15px;
+}
+
+.submit-btn:hover{
+    background-color: white;
+    border-color: aqua;
+    cursor: pointer;
+}
+
+.text{
+    font-size: 15px;
+    color: gray;
+    text-decoration: none;
+    transition: color 0.5s;
+    
+}
+
+
+.text:hover {
+border-bottom: 1px solid red;
+color: black;
+height: 22px;
+cursor: pointer
+}
+
+
+
+
+
+/*cards style*/
+
+
+.colum{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.row:after{
+    content: "";
+    clear: both;
+    display: table;
+    
+}
+.row{
+    display: flex;
+}
+/* .cards-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+   
+} */
+
+
+/* .card{
+    position: relative;
+} */
+
+.img-background{
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.img-text-wrapper{
+position: absolute;
+top: 0;
+display: grid;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100%;
+text-align: center;
+padding-left: 300px;
+padding-right: 300px;
+
+}
+
+.img{
+    width: 50%;
+    margin-bottom: 20px;
+    margin-left: 300px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    color: transparent;
+    font-weight: bold;
+    
+}
+.img-text-wrapper:hover .subtitle{
+    font-weight: bold;
+    color: lightcoral;
+}
+
+.img-darken{
+    transition:1s;
+    filter:brightness(10%)
+    
+}
+
+
+
+ /*Footer*/
+ .footer{
+    background-color:white;
+    height: 200px;
+    text-align: center;
+    padding: 50px;
+    border: 1px solid orange;
+ }
+
+ .footer:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+ }
+
+ .footer-lab{
+ }
+
+ /*Media Query*/
+
+ @media screen and (max-width: 500px) {
+    .colum{
+        width: 100%;
+    }
+ }
