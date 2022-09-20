@@ -178,8 +178,7 @@ cursor: pointer
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-   
+    background-repeat: no-repeat; 
 }
 
 .img-text-wrapper{
@@ -222,8 +221,6 @@ padding-right: 300px;
     
 }
 
-
-
  /*Footer*/
  .footer{
     background-color:white;
@@ -238,9 +235,6 @@ padding-right: 300px;
     cursor: pointer;
     color: red;
     text-decoration: underline;
- }
-
- .footer-lab{
  }
 
  /*Media Query*/
