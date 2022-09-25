@@ -46,6 +46,7 @@ router.get("/", (req, res) => {
     });
 });
 
+
 router.get("/Misc", (req, res) => {
   Category.findAll({
     where: {
@@ -146,7 +147,7 @@ router.get("/Chemicals", (req, res) => {
 router.get("/dash", (req, res) => {
   Material.findAll({
     where: {
-      student_id: 8,
+      student_id: req.session.student_id,
     },
     include: {
       model: Category,
