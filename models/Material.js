@@ -15,10 +15,6 @@ Material.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    available: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
     student_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,6 +23,11 @@ Material.init(
         key: "id",
       },
     },
+    available: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+
     category_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

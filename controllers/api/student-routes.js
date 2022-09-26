@@ -19,7 +19,7 @@ router.get("/:id", async (req, res) => {
     const dbStudentData = await Student.findOne({
       attributes: { exclude: ["password"] },
       where: {
-        id: req.params.id,
+        id: req.session.id,
       },
       include: [
         {
