@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const transform = require("../utils/tranformer");
-const { Category, Material } = require("../models");
+const { Category, Material, Student } = require("../models");
 const _ = require("lodash");
 const withAuth = require("../utils/auth")
 
@@ -45,6 +45,20 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get("/", (req, res) => {
+  Student.findOne({
+    where: {
+      student_id: req.session.student_id
+    },
+    attributes: ["name"]
+  }).then((dbStudentData) => res.json(dbStudentData))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
 
 router.get("/Misc", (req, res) => {
   Category.findAll({
@@ -136,31 +150,6 @@ router.get("/Chemicals", (req, res) => {
       let materials = transform.materialize(categories[0]);
       console.log(materials)
       res.render("homepage", { materials, loggedIn: req.session.loggedIn });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.get("/dash", (req, res) => {
-  Material.findAll({
-    where: {
-      student_id: 8,
-    },
-    include: {
-      model: Category,
-      attributes: ["id","category_name",],
-    },
-  })
-    .then((dbMaterialData) => {
-      
-      const materials = dbMaterialData.map((chkmaterial) =>
-      chkmaterial.get({ plain: true })
-      );
-      // currently materials for dashboard are hard coded to student ID 2 
-      console.log(materials)
-      res.render("dash", { materials, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);

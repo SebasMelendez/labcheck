@@ -16,7 +16,11 @@
 											<td>{{material_name}}</td>
 											<td>In stock?: {{available}}</td>
 											<td>Category: {{category.category_name}}</td>
-											<td class="level-right"><a id="{{id}}" class="button is-small is-primary">Checkout</a></td>
+											{{#if available}}
+											<td class="level-right"><a id="{{id}}" class="button is-small is-primary">Check Out</a></td>
+											{{else}}
+											<td class="level-right"><a id="checkin-{{id}}" class="button is-small is-primary">Check In</a></td>
+											{{/if}}
 										</tr>
 									{{/each}}	
 									</tbody>

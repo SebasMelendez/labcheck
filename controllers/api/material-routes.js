@@ -65,8 +65,9 @@ router.put("/:id", (req, res) => {
   Material.update(
     {
       material_name: req.body.material_name,
-      student_id: req.body.student_id,
-      available: req.body.available
+      student_id: req.session.student_id,
+      available: req.body.available,
+      category_id: req.body.category_id,
     },
     {
       where: {
